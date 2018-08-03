@@ -21,16 +21,15 @@ var scenes;
         // private methods
         // public methods
         End.prototype.Start = function () {
-            this._endLabel = new objects.Label("Game Over!", "60px", "Consolas", "#000000", config.Screen.HALF_WIDTH, 240, true);
-            this._backButton = new objects.Button("BackButton", 320, 360, true);
+            this._endLabel = new objects.Label("Game Over!", "60px", "Consolas", "#000000", config.Screen.HALF_WIDTH, 200, true);
+            this._backButton = new objects.Button("BackButton", 320, 400, true);
             this._ocean = new objects.Ocean();
             this.Main();
         };
         End.prototype.Update = function () {
             this._ocean.Update();
         };
-        End.prototype.Reset = function () {
-        };
+        End.prototype.Reset = function () { };
         End.prototype.Destroy = function () {
             this.removeAllChildren();
         };

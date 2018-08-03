@@ -21,9 +21,12 @@ var scenes;
         // private methods
         // public methods
         Start.prototype.Start = function () {
-            this._welcomeLabel = new objects.Label("Marino ", "60px", "Consolas", "#FF0000", 360, 120, true);
-            this._welcomeLabelby = new objects.Label("By Tidal Wave ", "40px", "Consolas", "#000000", 360, 240, true);
-            this._startButton = new objects.Button("StartButton", 320, 360, true);
+            this.engineSound = createjs.Sound.play("background");
+            this.engineSound.loop = -1;
+            this.engineSound.volume = 0.1;
+            this._welcomeLabel = new objects.Label("Marino ", "80px", "Consolas", "#660066", 440, 120, true);
+            this._welcomeLabelby = new objects.Label("- Tidal Wave ", "48px", "Consolas", "#ff0066", 420, 240, true);
+            this._startButton = new objects.Button("StartButton", 320, 400, true);
             this._settingButton = new objects.Button("SettingButton", 710, 550, true);
             this._infoButton = new objects.Button("InfoButton", 0, 550, true);
             this._ocean = new objects.Ocean();
@@ -32,8 +35,7 @@ var scenes;
         Start.prototype.Update = function () {
             this._ocean.Update();
         };
-        Start.prototype.Reset = function () {
-        };
+        Start.prototype.Reset = function () { };
         Start.prototype.Destroy = function () {
             this.removeAllChildren();
         };

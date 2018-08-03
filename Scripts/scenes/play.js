@@ -54,8 +54,7 @@ var scenes;
                 }
             });
         };
-        Play.prototype.Reset = function () {
-        };
+        Play.prototype.Reset = function () { };
         Play.prototype.Destroy = function () {
             this.removeAllChildren();
         };

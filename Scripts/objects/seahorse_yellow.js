@@ -10,20 +10,20 @@ var __extends = (this && this.__extends) || (function () {
 })();
 var objects;
 (function (objects) {
-    var SeaHorse = /** @class */ (function (_super) {
-        __extends(SeaHorse, _super);
+    var SeaHorse_yellow = /** @class */ (function (_super) {
+        __extends(SeaHorse_yellow, _super);
         /**
          * Creates an instance of Plane.
-         * @memberof Plane
+         * @memberof SeaHorse_yellow
          */
-        function SeaHorse() {
-            var _this = _super.call(this, "seahorse") || this;
+        function SeaHorse_yellow() {
+            var _this = _super.call(this, "seahorse_yellow") || this;
             console.log(_this.width + " " + _this.height);
             _this.Start();
             return _this;
         }
         // private methods
-        SeaHorse.prototype._checkBounds = function () {
+        SeaHorse_yellow.prototype._checkBounds = function () {
             // check right boundary
             if (this.y > config.Screen.HEIGHT - this.halfHeight) {
                 this.y = config.Screen.HEIGHT - this.halfHeight;
@@ -34,18 +34,18 @@ var objects;
             }
         };
         // public methods
-        SeaHorse.prototype.Start = function () {
+        SeaHorse_yellow.prototype.Start = function () {
             this.regX = this.halfWidth - 35;
             this.regY = this.halfHeight;
             this.y = 430;
         };
-        SeaHorse.prototype.Update = function () {
+        SeaHorse_yellow.prototype.Update = function () {
             this.y = managers.Game.Stage.mouseY;
             this._checkBounds();
         };
-        SeaHorse.prototype.Reset = function () { };
-        return SeaHorse;
+        SeaHorse_yellow.prototype.Reset = function () { };
+        return SeaHorse_yellow;
     }(objects.GameObject));
-    objects.SeaHorse = SeaHorse;
+    objects.SeaHorse_yellow = SeaHorse_yellow;
 })(objects || (objects = {}));
-//# sourceMappingURL=seehorse.js.map
+//# sourceMappingURL=seahorse_yellow.js.map

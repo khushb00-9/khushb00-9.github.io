@@ -1,14 +1,15 @@
 namespace objects {
-  export class Shark extends objects.GameObject {
+  export class Life extends objects.GameObject {
     // member variables
+    private _verticalSpeed: number;
     private _horizontalSpeed: number;
 
     /**
-     * Creates an instance of Plane.
-     * @memberof Plane
+     * Creates an instance of Fish.
+     * @memberof Life
      */
     constructor() {
-      super("shark");
+      super("life");
 
       this.Start();
     }
@@ -20,25 +21,28 @@ namespace objects {
         this.Reset();
       }
     }
-
     // public methods
     public Start(): void {
       this.regX = this.width;
       this.regY = this.height;
-      this._horizontalSpeed = 5;
+
       this.Reset();
     }
 
     public Update(): void {
+      //this.y += this._verticalSpeed;
       this.x -= this._horizontalSpeed;
       this._checkBounds();
     }
 
     public Reset(): void {
-      this.x = 1600;
+      //this._verticalSpeed =  Math.floor((Math.random() * 5) + 5); // between 5 and 10 ppf
+      this._horizontalSpeed = Math.floor(Math.random() * 4 + 2); // between -2 and 2 ppf
+      this.x = config.Screen.WIDTH;
       this.y = Math.floor(
-        Math.random() * (800 - this.height) + this.halfHeight
+        Math.random() * (config.Screen.HEIGHT - this.height) + this.halfHeight
       );
+      console.log(this._horizontalSpeed);
     }
   }
 }

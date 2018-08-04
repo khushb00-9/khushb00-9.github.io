@@ -10,41 +10,44 @@ var __extends = (this && this.__extends) || (function () {
 })();
 var objects;
 (function (objects) {
-    var Shark = /** @class */ (function (_super) {
-        __extends(Shark, _super);
+    var Life = /** @class */ (function (_super) {
+        __extends(Life, _super);
         /**
-         * Creates an instance of Plane.
-         * @memberof Plane
+         * Creates an instance of Fish.
+         * @memberof Life
          */
-        function Shark() {
-            var _this = _super.call(this, "shark") || this;
+        function Life() {
+            var _this = _super.call(this, "life") || this;
             _this.Start();
             return _this;
         }
         // private methods
-        Shark.prototype._checkBounds = function () {
+        Life.prototype._checkBounds = function () {
             // check bottom boundary
             if (this.x < this.halfWidth) {
                 this.Reset();
             }
         };
         // public methods
-        Shark.prototype.Start = function () {
+        Life.prototype.Start = function () {
             this.regX = this.width;
             this.regY = this.height;
-            this._horizontalSpeed = 5;
             this.Reset();
         };
-        Shark.prototype.Update = function () {
+        Life.prototype.Update = function () {
+            //this.y += this._verticalSpeed;
             this.x -= this._horizontalSpeed;
             this._checkBounds();
         };
-        Shark.prototype.Reset = function () {
-            this.x = 1600;
-            this.y = Math.floor(Math.random() * (800 - this.height) + this.halfHeight);
+        Life.prototype.Reset = function () {
+            //this._verticalSpeed =  Math.floor((Math.random() * 5) + 5); // between 5 and 10 ppf
+            this._horizontalSpeed = Math.floor(Math.random() * 4 + 2); // between -2 and 2 ppf
+            this.x = config.Screen.WIDTH;
+            this.y = Math.floor(Math.random() * (config.Screen.HEIGHT - this.height) + this.halfHeight);
+            console.log(this._horizontalSpeed);
         };
-        return Shark;
+        return Life;
     }(objects.GameObject));
-    objects.Shark = Shark;
+    objects.Life = Life;
 })(objects || (objects = {}));
-//# sourceMappingURL=shark.js.map
+//# sourceMappingURL=life.js.map

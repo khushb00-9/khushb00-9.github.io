@@ -10,44 +10,44 @@ var __extends = (this && this.__extends) || (function () {
 })();
 var objects;
 (function (objects) {
-    var Fish = /** @class */ (function (_super) {
-        __extends(Fish, _super);
+    var Red_fish = /** @class */ (function (_super) {
+        __extends(Red_fish, _super);
         /**
          * Creates an instance of Fish.
-         * @memberof Fish
+         * @memberof Red_fish
          */
-        function Fish() {
+        function Red_fish() {
             var _this = _super.call(this, "red_fish") || this;
             _this.Start();
             return _this;
         }
         // private methods
-        Fish.prototype._checkBounds = function () {
+        Red_fish.prototype._checkBounds = function () {
             // check bottom boundary
             if (this.x < this.halfWidth) {
                 this.Reset();
             }
         };
         // public methods
-        Fish.prototype.Start = function () {
+        Red_fish.prototype.Start = function () {
             this.regX = this.width;
             this.regY = this.height;
             this.Reset();
         };
-        Fish.prototype.Update = function () {
+        Red_fish.prototype.Update = function () {
             //this.y += this._verticalSpeed;
             this.x -= this._horizontalSpeed;
             this._checkBounds();
         };
-        Fish.prototype.Reset = function () {
+        Red_fish.prototype.Reset = function () {
             //this._verticalSpeed =  Math.floor((Math.random() * 5) + 5); // between 5 and 10 ppf
-            this._horizontalSpeed = Math.floor((Math.random() * 4) + 2); // between -2 and 2 ppf
+            this._horizontalSpeed = Math.floor(Math.random() * 4 + 2); // between -2 and 2 ppf
             this.x = config.Screen.WIDTH;
-            this.y = Math.floor((Math.random() * (config.Screen.HEIGHT - this.height)) + this.halfHeight);
+            this.y = Math.floor(Math.random() * (config.Screen.HEIGHT - this.height) + this.halfHeight);
             console.log(this._horizontalSpeed);
         };
-        return Fish;
+        return Red_fish;
     }(objects.GameObject));
-    objects.Fish = Fish;
+    objects.Red_fish = Red_fish;
 })(objects || (objects = {}));
-//# sourceMappingURL=fish.js.map
+//# sourceMappingURL=red_fish.js.map

@@ -16,14 +16,25 @@
         { id: "InfoButton", src: "/Assets/images/info.png" },
         { id: "ocean", src: "/Assets/images/tidalwave1.png" },
         { id: "BackButton", src: "/Assets/images/BackButton.png" },
-        { id: "seahorse", src: "/Assets/images/seahorse.png" },
+        { id: "seahorse_orange", src: "/Assets/images/seahorse_orange.png" },
+        { id: "seahorse_pink", src: "/Assets/images/seahorse_pink.png" },
+        { id: "seahorse_yellow", src: "/Assets/images/seahorse_yellow.png" },
+        { id: "seahorse_multi", src: "/Assets/images/seahorse_multi.png" },
+        { id: "shark", src: "/Assets/images/shark.png" },
         { id: "red_fish", src: "/Assets/images/RedFish_small.png" },
-        { id: "shark", src: "/Assets/images/sark.png" },
-        { id: "orange_fish", src: "/Assets/images/OrangeFish.png" },
+        { id: "orange_fish", src: "/Assets/images/OrangeFish_small.png" },
+        { id: "green_fish", src: "/Assets/images/GreenFish_small.png" },
+        { id: "purple_fish", src: "/Assets/images/PurpleFish_small.png" },
+        { id: "life", src: "/Assets/images/life.png" },
+        { id: "bonus", src: "/Assets/images/bonus.png" },
+        { id: "level1", src: "/Assets/images/level1.png" },
+        { id: "level2", src: "/Assets/images/level2.png" },
+        { id: "level3", src: "/Assets/images/level3.png" },
         { id: "die", src: "/Assets/audio/die.wav" },
         { id: "button", src: "/Assets/audio/button.wav" },
         { id: "thunder", src: "/Assets/audio/thunder.ogg" },
-        { id: "background", src: "/Assets/audio/background.mp3" }
+        { id: "background", src: "/Assets/audio/background.mp3" },
+        { id: "lifeSound", src: "/Assets/audio/life.wav" }
     ];
     function Init() {
         console.log("%c Assets Loading...", "font-weight:bold; font-size:20px; color: green;");
@@ -43,7 +54,7 @@
         createjs.Ticker.on("tick", Update);
         CurrentState = config.Scene.START;
         managers.Game.CurrentState = CurrentState;
-        ScoreBoard = new managers.ScoreBoard;
+        ScoreBoard = new managers.ScoreBoard();
         managers.Game.ScoreBoard = ScoreBoard;
         // This is where all the magic happens
         Main();
